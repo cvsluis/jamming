@@ -1,9 +1,12 @@
 @import './styles/theme.scss';
 
 .App {
-  background-color: $purple;
+  background-color: $lightest;
   padding-top: 40px;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .App-header {
@@ -13,4 +16,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+main {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

@@ -4,8 +4,8 @@ import Button from './Button';
 
 const SearchBar = () => {
   return (
-    <form>
-      <input type="text" name="search-bar" id="search-bar" placeholder='Search for a song'></input>
+    <form className='search-bar'>
+      <input type="text" name="search-bar" id="search-bar" placeholder='Search for a song' className='search-input'></input>
       <Button />
     </form>
   );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.scss';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
+import Playlist from './components/Playlist';
 
 const data = [
   {
@@ -33,6 +34,8 @@ const data = [
 function App() {
   const [songs, setSongs] = useState(data);
 
+  const [playlist, setPlaylist] = useState([]);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -40,6 +43,7 @@ function App() {
       </header>
       <main>
         <SearchResults songs={songs}/>
+        <Playlist />
       </main>
     </div>
   );
