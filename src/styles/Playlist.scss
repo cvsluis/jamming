@@ -1,5 +1,9 @@
 @import 'theme';
 
 .playlist-input {
-  background-color: $lightest;
+  font-weight: bold;
+  font-size: 1.5em;
+  border: none;
+  outline-color: white;
+  color: $darkest;
 }
