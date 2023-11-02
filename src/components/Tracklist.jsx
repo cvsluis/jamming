@@ -1,8 +1,20 @@
 import React from 'react';
+import Track from './Track';
 
-const Tracklist = () => {
+const Tracklist = ({ songs }) => {
+
+  const songList = songs.map(song => {
+
+    return (
+      <Track key={song.id} song={song} />
+    );
+  })
+
   return (
-    <div>Tracklist</div>
+    <>
+      {songList}
+    </>
+
   );
 };
 
