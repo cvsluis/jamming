@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Playlist.scss'
 import Tracklist from './Tracklist';
+import Button from './Button';
 
 const Playlist = ({ songs, updatePlaylist, isInPlaylist }) => {
   const [playlistTitle, setPlaylistTitle] = useState('');
@@ -12,6 +13,7 @@ const Playlist = ({ songs, updatePlaylist, isInPlaylist }) => {
         <hr></hr>
       </div>
       <Tracklist songs={songs} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />
+      <Button>Submit to Spotify</Button>
     </div>
   );
 };

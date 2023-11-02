@@ -6,7 +6,7 @@ const SearchBar = () => {
   return (
     <form className='search-bar'>
       <input type="text" name="search-bar" id="search-bar" placeholder='Search for a song' className='search-input'></input>
-      <Button />
+      <Button>SEARCH</Button>
     </form>
   );
 };
