@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/Playlist.scss'
+import Tracklist from './Tracklist';
 
-const Playlist = () => {
+const Playlist = ({ songs, updatePlaylist, isInPlaylist }) => {
   const [playlistTitle, setPlaylistTitle] = useState('');
 
   return (
@@ -10,7 +11,7 @@ const Playlist = () => {
         <input placeholder='Playlist Name' className='playlist-input' value={playlistTitle} onChange={(e) => setPlaylistTitle(e.target.value)}></input>
         <hr></hr>
       </div>
-
+      <Tracklist songs={songs} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />
     </div>
   );
 };

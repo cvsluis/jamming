@@ -36,14 +36,27 @@ function App() {
 
   const [playlist, setPlaylist] = useState([]);
 
+  const updatePlaylist = (song) => {
+    if (!playlist.includes(song)) {
+      setPlaylist([...playlist, song]);
+      return;
+    }
+    const filteredPlaylist = playlist.filter(e => e !== song);
+    setPlaylist(filteredPlaylist);
+  };
+
+  const isInPlaylist = (song) => {
+    return playlist.includes(song);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <SearchBar />
       </header>
       <main>
-        <SearchResults songs={songs}/>
-        <Playlist />
+        <SearchResults songs={songs} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />
+        <Playlist songs={playlist} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />
       </main>
     </div>
   );

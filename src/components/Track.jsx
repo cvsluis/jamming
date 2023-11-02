@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Track.scss' 
 
-const Track = ({song}) => {
+const Track = ({ song, updatePlaylist, isInPlaylist }) => {
   return (
     <div className='track-container'>
       <div className='track-contents'>
@@ -9,7 +9,7 @@ const Track = ({song}) => {
           <h4>{song.title}</h4>
           <h5>{song.artist} - {song.album}</h5>
         </div>
-        <button className='track-button'>+</button>
+        <button className='track-button' onClick={() => updatePlaylist(song)}>{isInPlaylist(song) ? '-' : '+'}</button>
       </div>
       <hr></hr>
     </div>
