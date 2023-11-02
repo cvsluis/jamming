@@ -2,13 +2,14 @@
 
 .article-container {
   min-width: 450px;
-  min-height: 500px;
+  height: 500px;
   border-radius: 20px;
   background-color: white;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  overflow: scroll;
 }
 
 .article-container h2 {

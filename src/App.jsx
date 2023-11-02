@@ -29,13 +29,37 @@ const data = [
     title: 'The Fall',
     album: 'Appaloosa Bones'
   },
+  {
+    id: 5,
+    artist: 'Alex Turner',
+    title: 'Stuck on the puzzle',
+    album: 'Submarine'
+  },
+  {
+    id: 6,
+    artist: 'John Vincent III',
+    title: 'Highway Woman',
+    album: 'Highway Woman'
+  },
+  {
+    id: 7,
+    artist: 'John Vincent III',
+    title: 'Untitled #2',
+    album: 'Songs from the Valley'
+  },
+  {
+    id: 8,
+    artist: 'Arctic Monkeys',
+    title: "There'd Better Be A Mirrorball",
+    album: "The Car"
+  }
 ];
 
 function App() {
   const [songs, setSongs] = useState(data);
 
+  // Playlist Songs State
   const [playlist, setPlaylist] = useState([]);
-
   const updatePlaylist = (song) => {
     if (!playlist.includes(song)) {
       setPlaylist([...playlist, song]);
@@ -49,6 +73,12 @@ function App() {
     return playlist.includes(song);
   };
 
+  // Playlist Title State
+  const [playlistTitle, setPlaylistTitle] = useState('');
+  const updatePlaylistTitle = (e) => {
+    setPlaylistTitle(e.target.value);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -56,7 +86,7 @@ function App() {
       </header>
       <main>
         <SearchResults songs={songs} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />
-        <Playlist songs={playlist} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />
+        <Playlist songs={playlist} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} updatePlaylistTitle={updatePlaylistTitle} playlistTitle={playlistTitle}/>
       </main>
     </div>
   );
