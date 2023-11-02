@@ -1,0 +1,17 @@
+@import 'theme';
+
+.article-container {
+  min-width: 450px;
+  min-height: 500px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.article-container h2 {
+  margin: 0;
+  color: $darkest;
+}

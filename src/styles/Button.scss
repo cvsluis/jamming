@@ -1,9 +1,9 @@
 @import 'theme';
 
-button {
+.submit {
   min-width: 100px;
-  background-color: $lightt-purp;
-  color: $darkest-purple;
+  background-color: $light;
+  color: $darkest;
   padding: 1em 2em;
   border: none;
   border-radius: 20px;
@@ -11,6 +11,6 @@ button {
   font-weight: bold;
 }
 
-button:hover {
-  background-color: $lightest-purple;
+.submit:hover {
+  background-color: $mid;
 }
