@@ -10,9 +10,10 @@
   flex-direction: column;
   gap: 1rem;
   overflow: scroll;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .article-container h2 {
   margin: 0;
-  color: $darkest;
+  color: $darker;
 }

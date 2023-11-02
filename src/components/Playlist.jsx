@@ -7,7 +7,7 @@ const Playlist = ({ songs, updatePlaylist, isInPlaylist, updatePlaylistTitle, pl
   return (
     <div className="article-container">
       <div className='playlist-form'>
-        <input placeholder='Playlist Name' className='playlist-input' value={playlistTitle} onChange={updatePlaylistTitle} ></input>
+        <input placeholder='Add Playlist Name' className='playlist-input' value={playlistTitle} onChange={updatePlaylistTitle} ></input>
         <hr></hr>
       </div>
       <Tracklist songs={songs} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />

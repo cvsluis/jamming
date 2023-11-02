@@ -6,7 +6,9 @@ const SearchResults = ({ songs, updatePlaylist, isInPlaylist }) => {
 
   return (
     <div className="article-container">
-      <h2>Results</h2>
+      <div>
+        <h2>Results</h2>
+      </div>
       <Tracklist songs={songs} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />
     </div>
   );

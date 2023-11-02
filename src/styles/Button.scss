@@ -2,17 +2,18 @@
 
 .submit {
   margin: 0 auto;
-  min-width: 100px;
-  max-width: 200px;
-  background-color: $light;
-  color: $darkest;
-  padding: 1em 1.5em;
-  border: none;
-  border-radius: 20px;
-  transition-duration: 0.3s;
+  padding: 1rem 1.5rem;
   font-weight: bold;
+  text-transform: uppercase;
+  background: $dark;
+  color: #FFFFFF;
+  border-radius: 900px;
+  box-shadow: #a5a5ad 0 8px 16px -8px;
+  transition-duration: 0.3s;
+  border: 0;
+  cursor: pointer;
 }
 
 .submit:hover {
-  background-color: $mid;
+  background-color: $darker;
 }

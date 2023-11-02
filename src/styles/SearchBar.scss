@@ -8,8 +8,9 @@
 
 .search-bar input {
   width: 100%;
-  padding: 1em;
+  padding: 1em 1.5em;
   border: none;
   border-radius: 20px;
   outline-color: $darker;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 20px;
 }
