@@ -2,7 +2,6 @@
 
 .App {
   background-color: $lightest;
-  padding-top: 60px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,6 +9,7 @@
 }
 
 .App-header {
+  padding-top: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
