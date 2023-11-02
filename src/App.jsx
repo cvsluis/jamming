@@ -82,6 +82,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div className='logo'>
+          <h1>Jamming!</h1>
+          <p>Spotify Playlist Creator</p>
+        </div>
         <SearchBar />
       </header>
       <main>
