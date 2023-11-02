@@ -3,7 +3,7 @@ import '../styles/Button.scss'
 
 const Button = () => {
   return (
-    <button>Submit</button>
+    <button>SUBMIT</button>
   )
 }
 

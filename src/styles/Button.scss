@@ -1,12 +1,16 @@
+@import 'theme';
+
 button {
-  width: 100px;
-  background-color: #E6BCCD;
+  min-width: 100px;
+  background-color: $lightt-purp;
+  color: $darkest-purple;
   padding: 1em 2em;
   border: none;
   border-radius: 20px;
   transition-duration: 0.3s;
+  font-weight: bold;
 }
 
 button:hover {
-  background-color: #deaabf;
+  background-color: $lightest-purple;
 }

@@ -1,5 +1,14 @@
+@import 'theme';
+
+form {
+  display: flex;
+  gap: 20px;
+}
+
 input {
   width: 500px;
   padding: 1em;
+  border: none;
   border-radius: 20px;
+  outline-color: $dark-purple;
 }

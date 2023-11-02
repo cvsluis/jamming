@@ -1,5 +1,7 @@
+@import './styles/theme.scss';
+
 .App {
-  background-color: #331E38;
+  background-color: $purple;
   padding-top: 40px;
   min-height: 100vh;
 }
@@ -9,11 +11,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
