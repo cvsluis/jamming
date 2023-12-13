@@ -1,57 +1,6 @@
 import { useState } from "react";
 
 export default function useSearchData() {
-  const data = [
-    {
-      id: 1,
-      artist: "Gregory Alan Isakov",
-      title: "Amsterdam",
-      album: "The Weatherman",
-    },
-    {
-      id: 2,
-      artist: "Coldplay",
-      title: "Everglow",
-      album: "A Head Full of Dreams",
-    },
-    {
-      id: 3,
-      artist: "New West",
-      title: "Those Eyes",
-      album: "Based On A True Story",
-    },
-    {
-      id: 4,
-      artist: "Gregory Alan Isakov",
-      title: "The Fall",
-      album: "Appaloosa Bones",
-    },
-    {
-      id: 5,
-      artist: "Alex Turner",
-      title: "Stuck on the puzzle",
-      album: "Submarine",
-    },
-    {
-      id: 6,
-      artist: "John Vincent III",
-      title: "Highway Woman",
-      album: "Highway Woman",
-    },
-    {
-      id: 7,
-      artist: "John Vincent III",
-      title: "Untitled #2",
-      album: "Songs from the Valley",
-    },
-    {
-      id: 8,
-      artist: "Arctic Monkeys",
-      title: "There'd Better Be A Mirrorball",
-      album: "The Car",
-    },
-  ];
-
   const [songs, setSongs] = useState([]);
 
   // Search String State
@@ -62,7 +11,24 @@ export default function useSearchData() {
 
   const onSubmitSearch = (e) => {
     e.preventDefault();
-    setSongs(data);
+    const url = 'https://api.spotify.com/v1/search?q=' + searchString + '&type=track&limit=20';
+
+    fetch(url, {
+      method: "GET",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + process.env.REACT_APP_TOKEN
+      }})
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => setSongs(data.tracks.items))
+      .catch(error => console.error('Error fetching data:', error));
+
     setSearchString("");
   };
 
