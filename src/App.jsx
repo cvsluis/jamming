@@ -1,83 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import Playlist from './components/Playlist';
-
-const data = [
-  {
-    id: 1,
-    artist: 'Gregory Alan Isakov',
-    title: 'Amsterdam',
-    album: 'The Weatherman'
-  },
-  {
-    id: 2,
-    artist: 'Coldplay',
-    title: 'Everglow',
-    album: 'A Head Full of Dreams'
-  },
-  {
-    id: 3,
-    artist: 'New West',
-    title: 'Those Eyes',
-    album: 'Based On A True Story'
-  },
-  {
-    id: 4,
-    artist: 'Gregory Alan Isakov',
-    title: 'The Fall',
-    album: 'Appaloosa Bones'
-  },
-  {
-    id: 5,
-    artist: 'Alex Turner',
-    title: 'Stuck on the puzzle',
-    album: 'Submarine'
-  },
-  {
-    id: 6,
-    artist: 'John Vincent III',
-    title: 'Highway Woman',
-    album: 'Highway Woman'
-  },
-  {
-    id: 7,
-    artist: 'John Vincent III',
-    title: 'Untitled #2',
-    album: 'Songs from the Valley'
-  },
-  {
-    id: 8,
-    artist: 'Arctic Monkeys',
-    title: "There'd Better Be A Mirrorball",
-    album: "The Car"
-  }
-];
+import useSearchData from './hooks/useSearchData';
+import usePlaylistData from './hooks/usePlaylistData';
 
 function App() {
-  const [songs, setSongs] = useState(data);
-
-  // Playlist Songs State
-  const [playlist, setPlaylist] = useState([]);
-  const updatePlaylist = (song) => {
-    if (!playlist.includes(song)) {
-      setPlaylist([...playlist, song]);
-      return;
-    }
-    const filteredPlaylist = playlist.filter(e => e !== song);
-    setPlaylist(filteredPlaylist);
-  };
-
-  const isInPlaylist = (song) => {
-    return playlist.includes(song);
-  };
-
-  // Playlist Title State
-  const [playlistTitle, setPlaylistTitle] = useState('');
-  const updatePlaylistTitle = (e) => {
-    setPlaylistTitle(e.target.value);
-  };
+  const { songs, searchString, updateSearchString, onSubmitSearch } = useSearchData();
+  const { updatePlaylist, isInPlaylist, playlist, updatePlaylistTitle, playlistTitle } = usePlaylistData();
 
   return (
     <div className="App">
@@ -86,7 +17,7 @@ function App() {
           <h1>Jamming!</h1>
           <p>Spotify Playlist Creator</p>
         </div>
-        <SearchBar />
+        <SearchBar searchString={searchString} updateSearchString={updateSearchString} onSubmitSearch={onSubmitSearch} />
       </header>
       <main>
         <SearchResults songs={songs} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />
