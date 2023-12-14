@@ -3,7 +3,7 @@ import '../styles/Button.scss'
 
 const Button = (props) => {
   return (
-    <button className='submit'>{props.children}</button>
+    <button onClick={props.onButtonPress} className='submit'>{props.children}</button>
   )
 }
 

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/Playlist.scss'
 import Tracklist from './Tracklist';
 import Button from './Button';
 
-const Playlist = ({ songs, updatePlaylist, isInPlaylist, updatePlaylistTitle, playlistTitle }) => {
+const Playlist = ({ songs, updatePlaylist, isInPlaylist, updatePlaylistTitle, playlistTitle, onSubmitPlaylist }) => {
   return (
     <div className="article-container">
       <div className='playlist-form'>
@@ -11,7 +11,7 @@ const Playlist = ({ songs, updatePlaylist, isInPlaylist, updatePlaylistTitle, pl
         <hr></hr>
       </div>
       <Tracklist songs={songs} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />
-      <Button>Submit to Spotify</Button>
+      <Button onButtonPress={onSubmitPlaylist}>Submit to Spotify</Button>
     </div>
   );
 };
