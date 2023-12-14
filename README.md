@@ -8,6 +8,17 @@ To develop my skills as a web developer and practice implementing React, authent
 
 ## Final Product
 
+**Connect to Spotify Prompt**
+!["Screenshot of Connect to Spotify Page"](./docs/get_started.png)
+
+**Main Page with Error Message**
+!["Screenshot of Main Page with Error Message"](./docs/name_error.png)
+
+
+Mobile View       |  Mobile View with Results
+:-------------------------:|:-------------------------:
+!["Screenshot of Mobile View"](./docs/mobile.png)  |  !["Screenshot of Mobile View"](./docs/mobile2.png)
+
 ## Features
 - Users can search for songs by song title
 - Users can see information about each song like title, artist, and album for songs they queried
