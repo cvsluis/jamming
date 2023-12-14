@@ -40,12 +40,29 @@ export default function usePlaylistData() {
     return await response.json();
   };
 
+  
+  const addSongsToPlalist = async (playlistId, trackUriList) => {
+    const response = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+      headers: {
+        'Authorization': "Bearer " + accessToken
+      },
+      method: 'POST',
+      body: JSON.stringify({ uris: trackUriList })
+    });
+    return await response.json();
+  };
+
   const onSubmitPlaylist = async (e) => {
     e.preventDefault();
     try {
       const newPlaylist = await createPlaylist();
-
       const playlistId = newPlaylist.id;
+      const trackUriList = playlist.map((song) => song.uri);
+      
+      await addSongsToPlalist(playlistId, trackUriList);
+      
+      setPlaylist([]);
+      setPlaylistTitle('');
     } catch (error) {
       console.error('Sorry, we could not complete your request: ', error);
       throw error;
