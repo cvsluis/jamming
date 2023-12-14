@@ -18,7 +18,7 @@ Install the app dependencies running:
 
     $ npm install
 
-Create a `.env` file by using `.env.example` as a reference
+Create an `.env` file by using `.env.example` as a reference.
 
 You will need to register your app and get your own credentials from the [Spotify for Developers Dashboard](https://developer.spotify.com/dashboard).
 
