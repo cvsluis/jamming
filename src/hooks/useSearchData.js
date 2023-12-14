@@ -1,6 +1,8 @@
 import { useState } from "react";
+import useProfileData from './useProfileData';
 
 export default function useSearchData() {
+  const { accessToken } = useProfileData();
   const [songs, setSongs] = useState([]);
 
   // Search String State
@@ -18,7 +20,7 @@ export default function useSearchData() {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': "Bearer " + process.env.REACT_APP_TOKEN
+        'Authorization': "Bearer " + accessToken
       }})
       .then(response => {
         if (!response.ok) {

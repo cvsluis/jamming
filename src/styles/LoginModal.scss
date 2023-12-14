@@ -1,0 +1,17 @@
+.login-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 0 50vmax rgba(0,0,0,.5);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}

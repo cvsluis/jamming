@@ -5,13 +5,17 @@ import SearchResults from './components/SearchResults';
 import Playlist from './components/Playlist';
 import useSearchData from './hooks/useSearchData';
 import usePlaylistData from './hooks/usePlaylistData';
+import LoginModal from './components/LoginModal';
+import useProfileData from './hooks/useProfileData';
 
 function App() {
   const { songs, searchString, updateSearchString, onSubmitSearch } = useSearchData();
-  const { updatePlaylist, isInPlaylist, playlist, updatePlaylistTitle, playlistTitle } = usePlaylistData();
+  const { updatePlaylist, isInPlaylist, playlist, updatePlaylistTitle, playlistTitle, onSubmitPlaylist } = usePlaylistData();
+  const { accessToken } = useProfileData();
 
   return (
     <div className="App">
+      {!accessToken && <LoginModal />}
       <header className="App-header">
         <div className='logo'>
           <h1>Jamming!</h1>
@@ -21,7 +25,7 @@ function App() {
       </header>
       <main>
         <SearchResults songs={songs} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />
-        <Playlist songs={playlist} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} updatePlaylistTitle={updatePlaylistTitle} playlistTitle={playlistTitle}/>
+        <Playlist songs={playlist} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} updatePlaylistTitle={updatePlaylistTitle} playlistTitle={playlistTitle} onSubmitPlaylist={onSubmitPlaylist} />
       </main>
     </div>
   );
