@@ -1,12 +1,12 @@
 @import 'theme';
 
 .article-container {
-  width: 40%;
   height: 480px;
   border-radius: 20px;
   background-color: white;
   padding: 2rem;
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 1rem;
   overflow: scroll;
@@ -16,4 +16,10 @@
 .article-container h2 {
   margin: 0;
   color: $darker;
+}
+
+@media only screen and (max-width: 700px) {
+  .article-container {
+    min-height: 480px;
+  }
 }

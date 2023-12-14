@@ -8,6 +8,7 @@ body, html {
 
 .App {
   background-color: $lightest;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,5 +49,24 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 3rem;
   padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 700px) {
+  main {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .App-header {
+    flex-direction: column;
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  main {
+    width: 85%;
+  }
 }

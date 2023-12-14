@@ -14,3 +14,9 @@
   outline-color: $darker;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 20px;
 }
+
+@media only screen and (max-width: 700px) {
+  .search-bar, form {
+    width: 100%;
+  }
+}
