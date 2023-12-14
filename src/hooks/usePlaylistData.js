@@ -21,6 +21,7 @@ export default function usePlaylistData() {
 
   // Playlist Title State
   const [playlistTitle, setPlaylistTitle] = useState('');
+  const [playlistTitleError, setPlaylistTitleError] = useState('');
   const updatePlaylistTitle = (e) => {
     setPlaylistTitle(e.target.value);
   };
@@ -54,6 +55,15 @@ export default function usePlaylistData() {
 
   const onSubmitPlaylist = async (e) => {
     e.preventDefault();
+
+    if (playlistTitle === '') {
+      console.log('need to add a title');
+      setPlaylistTitleError('Please add a name before submitting!');
+      return;
+    } else {
+      setPlaylistTitleError('');
+    }
+
     try {
       const newPlaylist = await createPlaylist();
       const playlistId = newPlaylist.id;
@@ -69,5 +79,5 @@ export default function usePlaylistData() {
     }
   }
 
-  return { updatePlaylist, isInPlaylist, playlist, updatePlaylistTitle, playlistTitle, onSubmitPlaylist };
+  return { updatePlaylist, isInPlaylist, playlist, updatePlaylistTitle, playlistTitle, onSubmitPlaylist, playlistTitleError };
 }

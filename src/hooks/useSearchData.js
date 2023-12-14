@@ -13,7 +13,7 @@ export default function useSearchData() {
 
   const onSubmitSearch = (e) => {
     e.preventDefault();
-    const url = 'https://api.spotify.com/v1/search?q=' + searchString + '&type=track&limit=20';
+    const url = 'https://api.spotify.com/v1/search?q=' + searchString + '&type=track&limit=50';
 
     fetch(url, {
       method: "GET",

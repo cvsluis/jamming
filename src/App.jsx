@@ -10,7 +10,7 @@ import useProfileData from './hooks/useProfileData';
 
 function App() {
   const { songs, searchString, updateSearchString, onSubmitSearch } = useSearchData();
-  const { updatePlaylist, isInPlaylist, playlist, updatePlaylistTitle, playlistTitle, onSubmitPlaylist } = usePlaylistData();
+  const { updatePlaylist, isInPlaylist, playlist, updatePlaylistTitle, playlistTitle, onSubmitPlaylist, playlistTitleError } = usePlaylistData();
   const { accessToken } = useProfileData();
 
   return (
@@ -25,7 +25,7 @@ function App() {
       </header>
       <main>
         <SearchResults songs={songs} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} />
-        <Playlist songs={playlist} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} updatePlaylistTitle={updatePlaylistTitle} playlistTitle={playlistTitle} onSubmitPlaylist={onSubmitPlaylist} />
+        <Playlist songs={playlist} updatePlaylist={updatePlaylist} isInPlaylist={isInPlaylist} updatePlaylistTitle={updatePlaylistTitle} playlistTitle={playlistTitle} onSubmitPlaylist={onSubmitPlaylist} playlistTitleError={playlistTitleError} />
       </main>
     </div>
   );
